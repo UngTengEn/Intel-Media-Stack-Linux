@@ -1,0 +1,18 @@
+[submodule "libva"]
+	path = libva
+	url = https://github.com/intel/libva.git
+[submodule "libva-utils"]
+	path = libva-utils
+	url = https://github.com/intel/libva-utils.git
+[submodule "gmmlib"]
+	path = gmmlib
+	url = https://github.com/intel/gmmlib.git
+[submodule "media-driver"]
+	path = media-driver
+	url = https://github.com/intel/media-driver.git
+[submodule "oneVPL-intel-gpu"]
+	path = oneVPL-intel-gpu
+	url = https://github.com/oneapi-src/oneVPL-intel-gpu.git
+[submodule "oneVPL"]
+	path = oneVPL
+	url = https://github.com/intel/libvpl.git
