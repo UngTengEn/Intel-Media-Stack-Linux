@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build Install | Release",
+			"command": "./build_install.sh",
+			"args": [
+				"release"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			},
+		},
+		{
+			"type": "shell",
+			"label": "Build Install | Debug",
+			"command": "./build_install.sh",
+			"args": [
+				"debug"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			},
+		}
+	]
+}

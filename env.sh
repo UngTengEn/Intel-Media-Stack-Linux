@@ -9,3 +9,5 @@ if [ -z $(echo $LD_LIBRARY_PATH | grep "$InstallDir") ]; then
 	export PKG_CONFIG_PATH=$InstallDir/lib64/pkgconfig
 	export LIBVA_DRIVERS_PATH=$InstallDir/lib64/dri
 fi
+
+[ ! -f .vscode/launch.json ] && cp .vscode/launch.json.template  .vscode/launch.json
