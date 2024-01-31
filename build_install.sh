@@ -34,7 +34,7 @@ meson_install libva
 meson_install libva-utils
 
 cmake_install gmmlib "${CmakeDebugFlags}"
-cmake_install media-driver ""
+cmake_install media-driver "-DLIBVA_DRIVERS_PATH=$LIBVA_DRIVERS_PATH -DINSTALL_DRIVER_SYSCONF=OFF -DENABLE_KERNELS=ON -DENABLE_NONFREE_KERNELS=ON -DBUILD_CMRTLIB=ON"
 
 cmake_install oneVPL "${CmakeDebugFlags}"
 cmake_install oneVPL-intel-gpu "${CmakeDebugFlags}"
