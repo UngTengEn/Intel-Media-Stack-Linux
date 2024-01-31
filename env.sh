@@ -14,3 +14,4 @@ if [ -z $(echo $LD_LIBRARY_PATH | grep "$InstallDir") ]; then
 fi
 
 [ ! -f .vscode/launch.json ] && cp .vscode/launch.json.template  .vscode/launch.json
+

@@ -4,7 +4,7 @@
 		{
 			"type": "shell",
 			"label": "Build Install | Release",
-			"command": "./build_install.sh",
+			"command": "./build.sh",
 			"args": [
 				"release"
 			],
@@ -16,7 +16,7 @@
 		{
 			"type": "shell",
 			"label": "Build Install | Debug",
-			"command": "./build_install.sh",
+			"command": "./build.sh",
 			"args": [
 				"debug"
 			],
