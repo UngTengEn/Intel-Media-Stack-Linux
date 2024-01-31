@@ -9,7 +9,7 @@ if [ -z $(echo $LD_LIBRARY_PATH | grep "$InstallDir") ]; then
 	export PKG_CONFIG_PATH=$InstallDir/lib64/pkgconfig
 	export LIBVA_DRIVERS_PATH=$InstallDir/lib64/dri
 	export GST_PLUGIN_SYSTEM_PATH=$InstallDir/lib64/gstreamer-1.0
-  [ -d $InstallDir/cache ] || mkdir -p $InstallDir/cache
+	[ -d $InstallDir/cache ] || mkdir -p $InstallDir/cache
 	export XDG_CACHE_HOME=$InstallDir/cache
 fi
 

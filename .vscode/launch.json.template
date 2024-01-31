@@ -1,7 +1,7 @@
-{ 
+{
     "version": "0.2.0",
-    "configurations": [ 
-        { 
+    "configurations": [
+        {
             "name": "Intel media stack debug active file",
             "type": "cppdbg",
             "request": "launch",
@@ -15,29 +15,39 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "setupCommands": [ 
-                { 
+            "setupCommands": [
+                {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": true 
+                    "ignoreFailures": true
                 },
-                { 
+                {
                     "description": "Set extra libraries environments",
                     "text": "set env LD_LIBRARY_PATH ${workspaceFolder}/_install/lib64",
-                    "ignoreFailures": true 
+                    "ignoreFailures": true
                 },
-                { 
+                {
                     "description": "Set libva drivers environments",
                     "text": "set env LIBVA_DRIVERS_PATH ${workspaceFolder}/_install/lib64/dri",
-                    "ignoreFailures": true 
+                    "ignoreFailures": true
                 },
-                { 
+                {
+                    "description": "Set Gstreamer plugins path environments",
+                    "text": "set env GST_PLUGIN_SYSTEM_PATH ${workspaceFolder}/lib64/gstreamer-1.0",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Gstreamer cache registry environments",
+                    "text": "set env XDG_CACHE_HOME ${workspaceFolder}/_install/cache",
+                    "ignoreFailures": true
+                },
+                {
                     "description": "Set debugging program arguments",
                     "text": "set args jpeg -i ~/Pictures/sample.jpg",
-                    "ignoreFailures": true 
-                } 
+                    "ignoreFailures": true
+                }
             ],
-            "miDebuggerPath": "/usr/bin/gdb" 
-        } 
-    ] 
-} 
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
