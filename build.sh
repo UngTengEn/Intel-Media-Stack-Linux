@@ -3,7 +3,7 @@
 . ./env.sh
 BuildType="Release"
 buildtype="release"
-BuildCompoents="all"
+BuildComponents="all"
 CmakeDebugFlags=""
 MesonDebugFlags=""
 
@@ -14,8 +14,8 @@ if [ "$1" == "debug" ]; then
 #	MesonDebugFlags="-Db_sanitize=address"    
 fi
 
-[ -z "$2" ]  || BuildComponents="$2"
 
+[ -z $2 ] || BuildComponents="$2"
 NPROC=$(nproc)
 [ $NPROC -gt 4 ] && NPROC=$(( $NPROC - 2 ))
 
