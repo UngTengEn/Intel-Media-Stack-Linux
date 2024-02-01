@@ -3,27 +3,107 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "Build Install | Release",
+			"label": "Build All | Release",
 			"command": "./build.sh",
 			"args": [
-				"release"
+				"release",
+				"all"
 			],
 			"group": "build",
 			"presentation": {
 				"reveal": "silent"
-			},
+			}
 		},
 		{
 			"type": "shell",
-			"label": "Build Install | Debug",
+			"label": "Build All | Debug",
 			"command": "./build.sh",
 			"args": [
-				"debug"
+				"debug",
+				"all"
 			],
 			"group": "build",
 			"presentation": {
 				"reveal": "silent"
-			},
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build VAAPI | Release",
+			"command": "./build.sh",
+			"args": [
+				"release",
+				"vaapi"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build VAAPI | Debug",
+			"command": "./build.sh",
+			"args": [
+				"debug",
+				"vaapi"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build Driver | Release",
+			"command": "./build.sh",
+			"args": [
+				"release",
+				"driver"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build Driver | Debug",
+			"command": "./build.sh",
+			"args": [
+				"debug",
+				"driver"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build VPL | Release",
+			"command": "./build.sh",
+			"args": [
+				"release",
+				"vpl"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "Build VPL | debug",
+			"command": "./build.sh",
+			"args": [
+				"debug",
+				"vpl"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			}
 		}
 	]
 }

@@ -3,6 +3,7 @@
 . ./env.sh
 BuildType="Release"
 buildtype="release"
+BuildCompoents="all"
 CmakeDebugFlags=""
 MesonDebugFlags=""
 
@@ -12,6 +13,8 @@ if [ "$1" == "debug" ]; then
 #	CmakeDebugFlags="-DCMAKE_CXX_FLAGS=-fsanitize=address -DCMAKE_C_FLAGS=-fsanitize=address"
 #	MesonDebugFlags="-Db_sanitize=address"    
 fi
+
+[ -z "$2" ]  || BuildComponents="$2"
 
 NPROC=$(nproc)
 [ $NPROC -gt 4 ] && NPROC=$(( $NPROC - 2 ))
@@ -30,11 +33,17 @@ function cmake_install() {
   make -j$NPROC -C _build/$BuildType/$1 install
 }
 
-meson_install libva
-meson_install libva-utils
+if [ "$BuildComponents" == "all" ] || [ "$BuildComponents" == "vaapi" ]; then
+	meson_install libva
+	meson_install libva-utils
+fi
 
-cmake_install gmmlib "${CmakeDebugFlags}"
-cmake_install media-driver "-DLIBVA_DRIVERS_PATH=$LIBVA_DRIVERS_PATH -DINSTALL_DRIVER_SYSCONF=OFF -DENABLE_KERNELS=ON -DENABLE_NONFREE_KERNELS=ON -DBUILD_CMRTLIB=ON"
+if [ "$BuildComponents" == "all" ] || [ "$BuildComponents" == "driver" ]; then
+	cmake_install gmmlib "${CmakeDebugFlags}"
+	cmake_install media-driver "-DLIBVA_DRIVERS_PATH=$LIBVA_DRIVERS_PATH -DINSTALL_DRIVER_SYSCONF=OFF -DENABLE_KERNELS=ON -DENABLE_NONFREE_KERNELS=ON -DBUILD_CMRTLIB=ON"
+fi
 
-cmake_install oneVPL "${CmakeDebugFlags}"
-cmake_install oneVPL-intel-gpu "${CmakeDebugFlags}"
+if [ "$BuildComponents" == "all" ] || [ "$BuildComponents" == "vpl" ]; then
+	cmake_install oneVPL "${CmakeDebugFlags}"
+	cmake_install oneVPL-intel-gpu "${CmakeDebugFlags}"
+fi
