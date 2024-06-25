@@ -12,7 +12,7 @@
 	url = https://github.com/intel/media-driver.git
 [submodule "oneVPL-intel-gpu"]
 	path = oneVPL-intel-gpu
-	url = https://github.com/oneapi-src/oneVPL-intel-gpu.git
+	url = https://github.com/intel/vpl-gpu-rt.git
 [submodule "oneVPL"]
 	path = oneVPL
 	url = https://github.com/intel/libvpl.git
